@@ -1,4 +1,5 @@
 import "./App.css";
+import ImagesExample from "./ImagesExample";
 import InputFile from "./InputFile";
 import InputFile2 from "./InputFile2";
 
@@ -11,8 +12,9 @@ function App() {
         alignItems: "center",
       }}
     >
-      <InputFile2 />
+      {/* <InputFile2 /> */}
       {/* <InputFile /> */}
+      <ImagesExample />
     </div>
   );
 }
