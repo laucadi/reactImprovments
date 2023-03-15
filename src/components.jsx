@@ -2,8 +2,11 @@ import React, { forwardRef } from "react";
 import ReactDOM from "react-dom";
 import { cx, css } from "@emotion/css";
 
-export const Button = forwardRef(
-  ({ className, active, reversed, ...props }, ref) => (
+export const Button = React.forwardRef(function Button(
+  { className, active, reversed, ...props },
+  ref
+) {
+  return (
     <span
       {...props}
       ref={ref}
@@ -21,8 +24,9 @@ export const Button = forwardRef(
         `
       )}
     />
-  )
-);
+  );
+});
+
 export const EditorValue = React.forwardRef(function EditorValue(props, ref) {
   const { className, value, children, ...rest } = props;
   const textLines = value.document.nodes
@@ -123,21 +127,23 @@ export const Portal = ({ children }) => {
     : null;
 };
 
-export const Toolbar = forwardRef(function (props, ref) {
-  const { className, ...otherProps } = props;
+export const Toolbar = React.forwardRef(function Toolbar(
+  { className, ...props },
+  ref
+) {
   return (
     <Menu
-      {...otherProps}
+      {...props}
       ref={ref}
       className={cx(
         className,
+        css`
+          position: relative;
+          padding: 1px 18px 17px;
+          margin: 0 -20px;
+          border-bottom: 2px solid #eee;
+          margin-bottom: 20px;
         `
-            position: relative;
-            padding: 1px 18px 17px;
-            margin: 0 -20px;
-            border-bottom: 2px solid #eee;
-            margin-bottom: 20px;
-          `
       )}
     />
   );
