@@ -66,6 +66,7 @@ const InputFile2 = () => {
       <Box
         component="span"
         sx={{
+          width: 200,
           display: "flex",
           border: "1px solid rgba(0, 0, 0, 0.23);",
           borderRadius: "10px",

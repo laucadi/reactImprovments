@@ -2,20 +2,29 @@ import "./App.css";
 import ImagesExample from "./ImagesExample";
 import InputFile from "./InputFile";
 import InputFile2 from "./InputFile2";
+import Draft from "./Draft";
+import { useState } from "react";
+import { Box } from "@mui/system";
+import InputPdf from "./InputPdf";
 
 function App() {
+  const [rich, setRich] = useState("");
+
+  const handle = (content) => {
+    const data = content === "<p></p>" ? " " : content;
+    //setRich(data);
+    console.log(content);
+  };
   return (
-    <div
-      style={{
-        display: "flex",
-        justifyContent: "space-between",
-        alignItems: "center",
-      }}
-    >
+    <Box>
+      <InputPdf />
       {/* <InputFile2 /> */}
       {/* <InputFile /> */}
-      <ImagesExample />
-    </div>
+      {/*  <ImagesExample /> */}
+      <Box>
+        <Draft />
+      </Box>
+    </Box>
   );
 }
 
