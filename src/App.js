@@ -6,6 +6,7 @@ import Draft from "./Draft";
 import { useState } from "react";
 import { Box } from "@mui/system";
 import InputPdf from "./InputPdf";
+import InputMultiple from "./InputMultiple";
 
 function App() {
   const [rich, setRich] = useState("");
@@ -17,13 +18,12 @@ function App() {
   };
   return (
     <Box>
-      <InputPdf />
+      <InputMultiple />
+      {/* <InputPdf /> */}
       {/* <InputFile2 /> */}
       {/* <InputFile /> */}
       {/*  <ImagesExample /> */}
-      <Box>
-        <Draft />
-      </Box>
+      <Box>{/* <Draft /> */}</Box>
     </Box>
   );
 }
