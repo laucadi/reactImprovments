@@ -35,10 +35,12 @@ const InputPdf = () => {
 
   const handleFileUpload = (event) => {
     const pdfFile = event.target.files[0];
+    console.log(pdfFile)
     handlePdfFile(pdfFile, setPdfAndName);
   };
 
   const setPdfAndName = (pdf, name) => {
+    console.log(pdf)
     setPdf(pdf);
     setPdfName(name);
   };
